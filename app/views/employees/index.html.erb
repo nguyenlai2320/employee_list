@@ -1,0 +1,43 @@
+<div class="wrapper_index">
+    <div class="header">list of employee</div>
+    <div class="content">
+        
+        <div>
+            <%= search_form_for @q do |form| %>
+                <div>
+                    <%= form.label :firstname %>
+                    <%= form.text_field :firstname_cont %>    
+                </div>
+                <div>
+                    <%= form.label :lastname %>
+                    <%= form.text_field :lastname_cont %>    
+                </div>
+                <div>
+                    <%= form.submit %>
+                </div>
+            <% end %>
+        </div>
+        
+        <table border="1" cellspacing="0">
+            <tr>
+                <td>employee id</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+            </tr>
+            <tr>
+                <% @employees.each do |employee| %>
+                <td><%= link_to employee.employee_id, employee %></td>
+                <td><%= link_to employee.firstname, employee %></td>
+                <td><%= link_to employee.lastname, employee %></td>
+            </tr>
+            <% end %>
+            <tr>
+                <td colspan=3>
+                    <%= paginate @employees %>
+                </td>
+            </tr>
+        </table>
+        <button class="btn1"><%= link_to "New Employee", new_employee_path %></button>
+        <button class="btn2"><%= link_to "HOME", root_path %></button>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="wrapper_form">
+    <div class="header">update employee information</div>
+    <div class="content">
+        <%= form_with model: employee do |form| %>
+        <div>
+            <%= form.label :employee_id %> <br>
+            <%= form.text_field :employee_id %>
+            <% employee.errors.full_messages_for(:employee_id).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :firstname %> <br>
+            <%= form.text_field :firstname %>
+            <% employee.errors.full_messages_for(:firstname).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :lastname %> <br>
+            <%= form.text_field :lastname %>
+            <% employee.errors.full_messages_for(:lastname).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :email %> <br>
+            <%= form.text_field :email %>
+            <% employee.errors.full_messages_for(:email).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :phone %> <br>
+            <%= form.text_field :phone %>
+            <% employee.errors.full_messages_for(:phone).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.label :position %> <br>
+            <%= form.text_field :position %>
+            <% employee.errors.full_messages_for(:position).each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <div>
+            <%= form.submit %>
+        </div>
+        <% end %>
+    </div>
+</div>
